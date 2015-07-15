@@ -97,7 +97,9 @@ echo
 # build/install ctags
 (
 if [[ `uname` == 'Darwin' ]]; then
-  echo "this script doesn't yet install ctags for Mac (TODO)"
+  echo "downloading and installing ctags..."
+  sudo brew tap universal-ctags/universal-ctags
+  sudo brew install --HEAD universal-ctags
 else
   if [ ! -f /usr/local/bin/ctags ]; then
     echo "ensuring dh-autoreconf is installed..."
