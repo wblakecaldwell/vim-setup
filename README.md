@@ -34,7 +34,7 @@ Installing:
                   --enable-perlinterp \
                   --enable-cscope
     $ make
-    $ sudo mv MacVim/build/Release/MacVim.app to /Applications/MacVim.app
+    $ sudo mv MacVim/build/Release/MacVim.app /Applications/MacVim.app
     $ mkdir -p ~/bin
     $ ln -s `pwd`/src/MacVim/mvim ~/bin/mvim
 
