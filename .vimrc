@@ -294,3 +294,14 @@ set spell
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 
+" Blake:
+" Removes trailing spaces on <Leader>rts and save
+function! TrimWhiteSpace()
+    %s/\s\+$//e
+endfunction
+nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
+autocmd FileWritePre    * :call TrimWhiteSpace()
+autocmd FileAppendPre   * :call TrimWhiteSpace()
+autocmd FilterWritePre  * :call TrimWhiteSpace()
+autocmd BufWritePre     * :call TrimWhiteSpace()
+" end Removes trailing spaces

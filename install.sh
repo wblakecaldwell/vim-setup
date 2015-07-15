@@ -14,6 +14,9 @@ SOLARIZED_DIR="${VIMDEPS_DIR}/solarized"
 # Where we store the Powerline Fonts repository
 POWERLINE_DIR="${VIMDEPS_DIR}/powerline-fonts"
 
+# Where we store the ctags repository
+CTAGS_DIR="${VIMDEPS_DIR}/ctags"
+
 mkdir -p $VIMDEPS_DIR
 mkdir -p ~/.vim
 
@@ -69,6 +72,39 @@ fi
 )
 
 echo
+
+# ------------------------------------------
+
+# build/install ctags
+(
+if [[ `uname` == 'Darwin' ]]; then
+  echo "this script doesn't yet install ctags for Mac (TODO)"
+else
+  if [ ! -f /usr/local/bin/ctags ]; then
+    echo "ensuring dh-autoreconf is installed..."
+    sudo apt-get install dh-autoreconf
+    echo
+
+    if [ ! -d $CTAGS_DIR ]; then
+      echo "downloading ctags source..."
+      git clone git@github.com:universal-ctags/ctags.git $CTAGS_DIR
+    else
+      echo "updating ctags source..."
+      cd $CTAGS_DIR && git pull origin master
+    fi
+
+    echo "building and installing ctags..."
+    cd $CTAGS_DIR
+    autoreconf -vfi
+    ./configure --prefix=/usr/local
+    make
+    sudo make install
+  fi
+fi
+)
+
+echo
+
 
 # install - modified version of its install script (DTA)
 (
