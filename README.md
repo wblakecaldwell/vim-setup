@@ -36,7 +36,7 @@ Installing:
     $ make
     $ sudo mv MacVim/build/Release/MacVim.app /Applications/MacVim.app
     $ mkdir -p ~/bin
-    $ ln -s `pwd`/src/MacVim/mvim ~/bin/mvim
+    $ ln -s `pwd`/MacVim/mvim ~/bin/mvim
 
 Making sure your PATH is set up properly and "vim" is aliased to mvim (~/.bash_profile)
 
