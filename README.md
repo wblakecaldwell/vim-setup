@@ -27,16 +27,17 @@ https://github.com/macvim-dev/macvim
 
 Installing:
 
-    $ cd src
+    $ git clone git@github.com:macvim-dev/macvim.git
+    $ cd macvim/src
     $ ./configure --with-features=huge \
                   --enable-rubyinterp \
                   --enable-pythoninterp \
                   --enable-perlinterp \
                   --enable-cscope
     $ make
-    $ sudo mv MacVim/build/Release/MacVim.app to /Applications/MacVim.app
+    $ sudo mv MacVim/build/Release/MacVim.app /Applications/MacVim.app
     $ mkdir -p ~/bin
-    $ ln -s `pwd`/src/MacVim/mvim ~/bin/mvim
+    $ ln -s `pwd`/MacVim/mvim ~/bin/mvim
 
 Making sure your PATH is set up properly and "vim" is aliased to mvim (~/.bash_profile)
 
