@@ -15,6 +15,19 @@ SOLARIZED_DIR="${VIMDEPS_DIR}/solarized"
 POWERLINE_DIR="${VIMDEPS_DIR}/powerline-fonts"
 
 mkdir -p $VIMDEPS_DIR
+mkdir -p ~/.vim
+
+
+# ------------------------------------------
+# Install ~/.vimrc if it doesn't exist
+if [ ! -f ~/.vimrc ]; then
+  echo "~/.vimrc doesn't exist - creating it"
+  cp .vimrc ~/.vimrc
+else
+  echo "~/.vimrc exists - leaving it alone"
+fi
+
+echo
 
 # ------------------------------------------
 # Solarized color scheme:
@@ -75,5 +88,24 @@ fi
 )
 
 echo
+
+# ------------------------------------------
+# Vundle
+(
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+  echo "installing vundle"
+  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+else
+  echo "updating vundle"
+  cd ~/.vim/bundle/Vundle.vim && git pull origin master
+fi
+)
+
+echo
+echo "installing all plugins"
+vim +PluginInstall +qall
+
+echo
 echo "done!"
+echo
 

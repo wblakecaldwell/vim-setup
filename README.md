@@ -9,8 +9,11 @@ Dependencies
 
 I put all my vim dependencies in ~/vim-deps, running `./install.sh` to install/update everything.
 
+The script will only write to ~/.vimrc if it doesn't exist.
 
-### Vim
+### Vim 7.4+
+
+#### Linux
 
 http://www.vim.org/
 
@@ -18,38 +21,32 @@ Install with:
 
     apt-get install vim
 
+#### Mac (MacVim)
 
-### UltiSnips - the ultimate solution for snippets in Vim
+https://github.com/macvim-dev/macvim
 
-https://github.com/sirver/ultisnips
+Installing:
 
-Install with with:
+    $ cd src
+    $ ./configure --with-features=huge \
+                  --enable-rubyinterp \
+                  --enable-pythoninterp \
+                  --enable-perlinterp \
+                  --enable-cscope
+    $ make
+    $ sudo mv MacVim/build/Release/MacVim.app to /Applications/MacVim.app
+    $ mkdir -p ~/bin
+    $ ln -s `pwd`/src/MacVim/mvim ~/bin/mvim
 
-    apt-get install vim-ultisnips
+Making sure your PATH is set up properly and "vim" is aliased to mvim (~/.bash_profile)
 
-
-### Solarized - Precision colors for machines and people
-
-https://github.com/altercation/solarized
-
-Install with:
-
-    ./install.sh
-
-
-### Powerline fonts
-
-https://github.com/powerline/fonts
-
-Install with:
-
-    ./install.sh
+    export PATH=~/bin:$PATH
+    alias vim='mvim -v'
+    alias vi='mvim -v'
 
 
-### Vundle
+### Others (Lots!)
 
-https://github.com/VundleVim/Vundle.vim
-
-Installed with:
+Everything else is installed with:
 
     ./install.sh
