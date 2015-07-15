@@ -32,6 +32,7 @@ fi
 
 echo
 
+
 # ------------------------------------------
 # Solarized color scheme:
 # - install/update from $SOLARIZED_DIR
@@ -55,6 +56,7 @@ fi
 
 echo
 
+
 # ------------------------------------------
 # Powerline fonts
 # - install/update from $POWERLINE_DIR
@@ -70,11 +72,28 @@ else
   cd $POWERLINE_DIR && git pull origin master
 fi
 )
+echo
+# install - modified version of its install script (DTA)
+(
+echo "installing powerline fonts..."
+cd $POWERLINE_DIR
+find_command="find \"$POWERLINE_DIR\" \( -name '*.[o,t]tf' -or -name '*.pcf.gz' \) -type f -print0"
+if [[ `uname` == 'Darwin' ]]; then
+  font_dir="$HOME/Library/Fonts"
+else
+  font_dir="$HOME/.fonts"
+  mkdir -p $font_dir
+fi
+eval $find_command | xargs -0 -I % cp "%" "$font_dir/"
+if [[ -n `which fc-cache` ]]; then
+  fc-cache -f $font_dir
+fi
+)
 
 echo
 
-# ------------------------------------------
 
+# ------------------------------------------
 # build/install ctags
 (
 if [[ `uname` == 'Darwin' ]]; then
@@ -105,25 +124,6 @@ fi
 
 echo
 
-
-# install - modified version of its install script (DTA)
-(
-echo "installing powerline fonts..."
-cd $POWERLINE_DIR
-find_command="find \"$POWERLINE_DIR\" \( -name '*.[o,t]tf' -or -name '*.pcf.gz' \) -type f -print0"
-if [[ `uname` == 'Darwin' ]]; then
-  font_dir="$HOME/Library/Fonts"
-else
-  font_dir="$HOME/.fonts"
-  mkdir -p $font_dir
-fi
-eval $find_command | xargs -0 -I % cp "%" "$font_dir/"
-if [[ -n `which fc-cache` ]]; then
-  fc-cache -f $font_dir
-fi
-)
-
-echo
 
 # ------------------------------------------
 # Vundle
