@@ -27,7 +27,8 @@ https://github.com/macvim-dev/macvim
 
 Installing:
 
-    $ cd src
+    $ git clone git@github.com:macvim-dev/macvim.git
+    $ cd macvim/src
     $ ./configure --with-features=huge \
                   --enable-rubyinterp \
                   --enable-pythoninterp \
