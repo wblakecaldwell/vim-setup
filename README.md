@@ -17,7 +17,7 @@ http://www.vim.org/
 Install with:
 
     apt-get install vim
-    
+
 
 ### UltiSnips - the ultimate solution for snippets in Vim
 
@@ -42,5 +42,14 @@ Install with:
 https://github.com/powerline/fonts
 
 Install with:
+
+    ./install.sh
+
+
+### Vundle
+
+https://github.com/VundleVim/Vundle.vim
+
+Installed with:
 
     ./install.sh
