@@ -158,12 +158,14 @@ else
 fi
 )
 echo
-echo "installing all plugins"
+echo "installing all plugins and Go binaries"
 command -v mvim > /dev/null 2>&1
 if [ $? -eq 0 ]; then
   mvim -v +PluginInstall +qall
+  mvim -v +GoInstallBinaries +qall
 else
   vim +PluginInstall +qall
+  vim +GoInstallBinaries +qall
 fi
 
 echo
