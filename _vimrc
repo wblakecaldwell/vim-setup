@@ -148,6 +148,7 @@ let mapleader=','
 set nobackup       "no backup files
 set nowritebackup  "only in case you don't want a backup file while editing
 set noswapfile     "no swap files
+set cursorline     "highlight the current line
 
 "set paste
 set number
