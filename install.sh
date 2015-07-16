@@ -117,8 +117,8 @@ echo
 (
 if [[ `uname` == 'Darwin' ]]; then
   echo "downloading and installing ctags..."
-  sudo brew tap universal-ctags/universal-ctags
-  sudo brew install --HEAD universal-ctags
+  brew tap universal-ctags/universal-ctags
+  brew install --HEAD universal-ctags
 else
   if [ ! -f /usr/local/bin/ctags ]; then
     echo "ensuring dh-autoreconf is installed..."
