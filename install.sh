@@ -28,7 +28,7 @@ mkdir -p ~/.vim
 # Install ~/.vimrc if it doesn't exist
 if [ ! -f ~/.vimrc ]; then
   echo "~/.vimrc doesn't exist - creating it"
-  cp .vimrc ~/.vimrc
+  cp _vimrc ~/.vimrc
 else
   echo "~/.vimrc exists - leaving it alone"
 fi
