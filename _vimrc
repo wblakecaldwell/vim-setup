@@ -14,7 +14,7 @@ set encoding=utf-8
 set ts=2
 set sw=2
 set expandtab
-autocmd FileType go set tabstop=2|set shiftwidth=2|set noexpandtab
+autocmd FileType go set tabstop=4|set shiftwidth=4|set noexpandtab
 
 " buffer pos memory
 set viminfo='10,\"100,:20,%,n~/.viminfo
@@ -100,6 +100,11 @@ ab tempalte template
 ab seperate separate
 ab srting string
 ab balacner balancer
+
+" search options
+set ignorecase
+set smartcase
+set incsearch
 
 " lines of visible b4 scroll
 set scrolloff=10
@@ -209,9 +214,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 nmap <F8> :TagbarToggle<CR>
 nmap <F1> :NERDTreeToggle<CR>
-
-" Blake
 nmap <leader>f :NERDTreeFind<CR>
+
+let g:NERDTreeWinSize = 50
 
 "let g:godef_split=3
 "
