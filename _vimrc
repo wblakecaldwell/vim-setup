@@ -91,15 +91,11 @@ let g:Powerline_symbols = 'unicode'
 filetype plugin indent on     " required!
 
 " Common typos fixed.
-ab teh the
-ab fro for
-ab nad and
-ab adn and
-ab recipie recipe
-ab tempalte template
-ab seperate separate
-ab srting string
-ab balacner balancer
+"ab adn and
+
+" ctrlp
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_regexp = 1
 
 " search options
 set ignorecase
