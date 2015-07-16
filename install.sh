@@ -17,6 +17,9 @@ POWERLINE_DIR="${VIMDEPS_DIR}/powerline-fonts"
 # Where we store the ctags repository
 CTAGS_DIR="${VIMDEPS_DIR}/ctags"
 
+# Where we store the themes for Terminal.app
+TERMINAL_APP_THEME_DIR="${VIMDEPS_DIR}/terminal_app_theme"
+
 mkdir -p $VIMDEPS_DIR
 mkdir -p ~/.vim
 
@@ -39,7 +42,6 @@ echo
 
 # clone/pull the repo
 (
-cd $VIMDEPS_DIR
 if [ ! -d $SOLARIZED_DIR ]; then
   echo "downloading solarized..."
   git clone git://github.com/altercation/solarized.git $SOLARIZED_DIR
@@ -56,6 +58,21 @@ fi
 
 echo
 
+# ------------------------------------------
+# Solarized color pallet for OS X Terminal.app
+(
+if [[ `uname` == 'Darwin' ]]; then
+  if [ ! -d $TERMINAL_APP_THEME_DIR ]; then
+    echo "downloading pallete for OS X Terminal.app..."
+    git clone https://github.com/tomislav/osx-terminal.app-colors-solarized $TERMINAL_APP_THEME_DIR
+    open "${TERMINAL_APP_THEME_DIR}/Solarized Dark.terminal"
+    open "${TERMINAL_APP_THEME_DIR}/Solarized Light.terminal"
+  fi
+fi
+)
+
+echo
+
 
 # ------------------------------------------
 # Powerline fonts
@@ -63,7 +80,6 @@ echo
 
 # clone/pull the repo
 (
-cd $VIMDEPS_DIR
 if [ ! -d $POWERLINE_DIR ]; then
   echo "downloading powerline fonts..."
   git clone git@github.com:powerline/fonts.git $POWERLINE_DIR
@@ -72,7 +88,10 @@ else
   cd $POWERLINE_DIR && git pull origin master
 fi
 )
+
 echo
+
+
 # install - modified version of its install script (DTA)
 (
 echo "installing powerline fonts..."
@@ -138,10 +157,14 @@ else
   cd ~/.vim/bundle/Vundle.vim && git pull origin master
 fi
 )
-
 echo
 echo "installing all plugins"
-vim +PluginInstall +qall
+command -v mvim > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+  mvim -v +PluginInstall +qall
+else
+  vim +PluginInstall +qall
+fi
 
 echo
 echo "done!"

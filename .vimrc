@@ -1,14 +1,13 @@
-" 
+"
 " Original version from:  Jesse Nelson <spheromak@gmail.com>
-" ab  
+" ab
 "-------------------------------------------------------------------------------
-" 
+"
 "
 set nocompatible               " be iMproved
 scriptencoding utf-8
 set encoding=utf-8
 
-set t_Co=256
 
 "set clipboard=unnamed
 
@@ -38,7 +37,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Plugin 'gmarik/Vundle.vim'
 
 " My Bundles here:
@@ -51,7 +50,7 @@ Plugin 'rizzatti/dash.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Townk/vim-autoclose'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'Lokaltog/vim-powerline' 
+Plugin 'Lokaltog/vim-powerline'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 't9md/vim-chef'
 Plugin 'JSON.vim'
@@ -90,13 +89,13 @@ let g:UltiSnipsEditSplit="vertical"
 
 call vundle#end()            " required
 let g:Powerline_symbols = 'unicode'
-filetype plugin indent on     " required! 
+filetype plugin indent on     " required!
 
 " Common typos fixed.
 ab teh the
 ab fro for
-ab nad and 
-ab adn and 
+ab nad and
+ab adn and
 ab recipie recipe
 ab tempalte template
 ab seperate separate
@@ -154,8 +153,6 @@ set noswapfile     "no swap files
 "set paste
 set number
 "set mouse=a
-set background=dark
-let g:solarized_visibility =  "low"
 
 filetype plugin on
 
@@ -266,10 +263,10 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 autocmd BufRead,BufNewFile */cookbooks/*/recipes/*.rb setlocal path+=recipes;/cookbooks/**1
 
 syntax enable
-set background=dark
-let g:solarized_termcolors=256
-"let g:solarized_visibility = "high"
-"let g:solarized_contrast = "high"
+set background = "dark"
+let g:solarized_termcolors=16
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "normal"
 colorscheme solarized
 
 nmap <silent> <F2> <Plug>DashSearch
@@ -279,7 +276,7 @@ nmap <silent> <F3> <Plug>DashSearch
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 "autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
-" AutoFormat on write 
+" AutoFormat on write
 noremap <F3> :Autoformat<CR><CR>
 
 " Set some nice character listings, then activate list
