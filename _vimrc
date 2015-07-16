@@ -290,7 +290,6 @@ set spell
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 
-" Blake:
 " Removes trailing spaces on <Leader>rts and save
 function! TrimWhiteSpace()
     %s/\s\+$//e
@@ -301,3 +300,10 @@ autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
 " end Removes trailing spaces
+
+" reload when we save ~/.vimrc
+augroup reload_vimrc " {
+  autocmd!
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " } "} "
+
