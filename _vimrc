@@ -86,7 +86,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-
 call vundle#end()            " required
 let g:Powerline_symbols = 'unicode'
 filetype plugin indent on     " required!
@@ -134,7 +133,6 @@ set statusline+=%<%P                         " file position
 
 "set grepprg=ack
 "set grepformat=%f:%l:%m
-
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -215,11 +213,12 @@ nmap <F1> :NERDTreeToggle<CR>
 " Blake
 nmap <leader>f :NERDTreeFind<CR>
 
-let g:gofmt_command = "goimports"
 "let g:godef_split=3
 "
 "faith-go
-let g:go_fmt_command = "goimports"
+let g:go_auto_type_info = 1
+let g:go_fmt_command = "gofmt"
+let g:go_fmt_autosave = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
@@ -284,7 +283,6 @@ noremap <F3> :Autoformat<CR><CR>
 "execute 'set listchars+=eol:' . nr2char(183)
 "set list
 
-let g:go_auto_type_info = 1
 
 setlocal spell spelllang=en_us
 set spell
