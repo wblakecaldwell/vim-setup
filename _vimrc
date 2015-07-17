@@ -268,6 +268,7 @@ set background=dark
 let g:solarized_termcolors=16
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "normal"
+map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR> )
 colorscheme solarized
 
 nmap <silent> <F2> <Plug>DashSearch
