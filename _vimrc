@@ -264,7 +264,7 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 autocmd BufRead,BufNewFile */cookbooks/*/recipes/*.rb setlocal path+=recipes;/cookbooks/**1
 
 syntax enable
-set background = "dark"
+set background=dark
 let g:solarized_termcolors=16
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "normal"
