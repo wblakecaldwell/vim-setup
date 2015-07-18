@@ -48,7 +48,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'oplatek/Conque-Shell'
 Plugin 'rizzatti/dash.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Townk/vim-autoclose'
+"Plugin 'Townk/vim-autoclose'     	" interferes with YouCompleteMe
+Plugin 'raimondi/delimitmate'		" replacement for Townk/vim-autoclose
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'Lokaltog/vim-easymotion'
@@ -77,11 +78,13 @@ Plugin 'dgryski/vim-godef'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 "
+
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+Plugin 'Valloric/YouCompleteMe'
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 "
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
@@ -149,6 +152,7 @@ set nobackup       "no backup files
 set nowritebackup  "only in case you don't want a backup file while editing
 set noswapfile     "no swap files
 set cursorline     "highlight the current line
+set hlsearch       "highlight all search results
 
 "set paste
 set number
@@ -240,9 +244,9 @@ au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-
-" Blake
 au FileType go nmap <Leader>df <Plug>(go-def)
+
+au FileType go nmap <Leader>gr <Plug>(go-referrers)
 
 "Open the relevant Godoc for the word under the cursor with <leader>gd or open it vertically with <leader>gv
 au FileType go nmap <Leader>gd <Plug>(go-doc)
@@ -259,10 +263,6 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 
 "More <Plug> mappings can be seen with :he go-mappings. Also these are just recommendations, you are free to create more advanced mappings or functions based on :he go-commands.
 
-" Make gf work on Chef include_recipe lines
-" Add all cookbooks/*/recipe dirs to Vim's path variable
-autocmd BufRead,BufNewFile */cookbooks/*/recipes/*.rb setlocal path+=recipes;/cookbooks/**1
-
 syntax enable
 set background=dark
 let g:solarized_termcolors=16
@@ -276,7 +276,7 @@ nmap <silent> <F3> <Plug>DashSearch
 
 " golint https://github.com/golang/lint
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
-"autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 " AutoFormat on write
 noremap <F3> :Autoformat<CR><CR>
