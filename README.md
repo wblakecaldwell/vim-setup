@@ -46,8 +46,13 @@ Making sure your PATH is set up properly and "vim" is aliased to mvim (~/.bash_p
     alias vi='mvim -v'
 
 
-### Others (Lots!)
+### Update ~/.vimrc and Install All Plugins
 
-Everything else is installed with:
+Install everything, but preserve an existing ~/.vimrc:
 
     ./install.sh
+
+Install everything, and overwrite an existing ~/.vimrc
+
+    ./install.sh -f
+

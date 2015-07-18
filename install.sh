@@ -26,11 +26,11 @@ mkdir -p ~/.vim
 
 # ------------------------------------------
 # Install ~/.vimrc if it doesn't exist
-if [ ! -f ~/.vimrc ]; then
-  echo "~/.vimrc doesn't exist - creating it"
+if [ "$1" = "-f" ] || [ ! -f ~/.vimrc ]; then
+  echo "updating ~/.vimrc"
   cp _vimrc ~/.vimrc
 else
-  echo "~/.vimrc exists - leaving it alone"
+  echo "leaving your existing ~/.vimrc alone - run again with \"-f\" flag to overwrite"
 fi
 
 echo
