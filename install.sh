@@ -161,10 +161,18 @@ echo
 echo "installing all plugins and Go binaries"
 command -v mvim > /dev/null 2>&1
 if [ $? -eq 0 ]; then
+  # Mac
   mvim -v +PluginInstall +qall
   mvim -v +GoInstallBinaries +qall
   mvim -v +GoUpdateBinaries +qall
 else
+  # Linux - assume apt-get for now
+  echo "Ensuring required system packages"
+  dpkg -s python-dev cmake > /dev/null 2>&1
+  if [ $? -ne 0 ]; then
+    echo "System packages need to be installed - need sudo access:"
+    sudo apt-get install python-dev cmake
+  fi
   vim +PluginInstall +qall
   vim +GoInstallBinaries +qall
   vim +GoUpdateBinaries +qall
