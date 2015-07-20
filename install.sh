@@ -163,9 +163,11 @@ command -v mvim > /dev/null 2>&1
 if [ $? -eq 0 ]; then
   mvim -v +PluginInstall +qall
   mvim -v +GoInstallBinaries +qall
+  mvim -v +GoUpdateBinaries +qall
 else
   vim +PluginInstall +qall
   vim +GoInstallBinaries +qall
+  vim +GoUpdateBinaries +qall
 fi
 
 echo
