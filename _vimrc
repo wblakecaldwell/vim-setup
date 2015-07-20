@@ -77,7 +77,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'dgryski/vim-godef'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
-"
+Plugin 'kshenoy/vim-signature'
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
