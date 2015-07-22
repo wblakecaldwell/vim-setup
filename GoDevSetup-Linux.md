@@ -7,11 +7,11 @@ These are the steps I use to set up a Linux system as a Go development environme
 
 On Debian 7:
   
-  sudo apt-get install cmake-data=2.8.11.1-1~bpo70+1 cmake=2.8.11.1-1~bpo70+1
+    sudo apt-get install cmake-data=2.8.11.1-1~bpo70+1 cmake=2.8.11.1-1~bpo70+1
 
 On Debian 8:
 
-  sudo apt-get install python-dev cmake ncurses-dev
+    sudo apt-get install python-dev cmake ncurses-dev
 
 
 
