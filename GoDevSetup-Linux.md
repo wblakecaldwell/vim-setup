@@ -49,6 +49,13 @@ More details found here: https://github.com/Valloric/YouCompleteMe/wiki/Building
     alias go-here='export GOPATH=`pwd` && export PATH="${GOPATH}/bin:${PATH_ORIG}"'
 
 
+# Update from ~/.profile
+
+Either log out, then back in, or:
+
+    source ~/.profile
+
+
 # My vim setup
 
     mkdir -p ~/development && cd ~/development
