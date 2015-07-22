@@ -14,6 +14,7 @@ More details found here: https://github.com/Valloric/YouCompleteMe/wiki/Building
 
     mkdir -p ~/development && cd ~/development
     git clone https://github.com/vim/vim.git
+    cd ~/development/vim
     ./configure --with-features=huge \
               --enable-multibyte \
               --enable-rubyinterp \
