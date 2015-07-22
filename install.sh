@@ -82,7 +82,7 @@ echo
 (
 if [ ! -d $POWERLINE_DIR ]; then
   echo "downloading powerline fonts..."
-  git clone git@github.com:powerline/fonts.git $POWERLINE_DIR
+  git clone https://github.com/powerline/fonts.git $POWERLINE_DIR
 else
   echo "updating powerline fonts..."
   cd $POWERLINE_DIR && git pull origin master
