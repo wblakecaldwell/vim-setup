@@ -8,6 +8,24 @@ These are the steps I use to set up a Linux system as a Go development environme
   sudo apt-get install python-dev cmake ncurses-dev
 
 
+# Compile vim
+
+More details found here: https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
+
+    mkdir -p ~/development && cd ~/development
+    git clone https://github.com/vim/vim.git
+    ./configure --with-features=huge \
+              --enable-multibyte \
+              --enable-rubyinterp \
+              --enable-pythoninterp \
+              --with-python-config-dir=/usr/lib/python2.7/config \
+              --enable-perlinterp \
+              --enable-luainterp \
+              --enable-gui=gtk2 --enable-cscope --prefix=/usr
+    make VIMRUNTIMEDIR=/usr/share/vim/vim74
+    sudo make install
+
+
 # Build Go from source
 
     cd ~
@@ -27,24 +45,6 @@ These are the steps I use to set up a Linux system as a Go development environme
 
     export PATH_ORIG=$PATH
     alias go-here='export GOPATH=`pwd` && export PATH="${GOPATH}/bin:${PATH_ORIG}"'
-
-
-# Compile vim
-
-More details found here: https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
-
-    mkdir -p ~/development && cd ~/development
-    git clone https://github.com/vim/vim.git
-    ./configure --with-features=huge \
-              --enable-multibyte \
-              --enable-rubyinterp \
-              --enable-pythoninterp \
-              --with-python-config-dir=/usr/lib/python2.7/config \
-              --enable-perlinterp \
-              --enable-luainterp \
-              --enable-gui=gtk2 --enable-cscope --prefix=/usr
-    make VIMRUNTIMEDIR=/usr/share/vim/vim74
-    sudo make install
 
 
 # My vim setup
