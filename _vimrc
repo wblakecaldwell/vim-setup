@@ -41,6 +41,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " My Bundles here:
+Plugin 'godlygeek/tabular'
+Plugin 'rodjek/vim-puppet'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'markcornick/vim-terraform'
 Plugin 'Chiel92/vim-autoformat'
