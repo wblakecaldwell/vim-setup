@@ -127,7 +127,7 @@ else
 
     if [ ! -d $CTAGS_DIR ]; then
       echo "downloading ctags source..."
-      git clone git@github.com:universal-ctags/ctags.git $CTAGS_DIR
+      git clone https://github.com/universal-ctags/ctags.git $CTAGS_DIR
     else
       echo "updating ctags source..."
       cd $CTAGS_DIR && git pull origin master
