@@ -296,7 +296,10 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 
 " Removes trailing spaces on <Leader>rts and save
 function! TrimWhiteSpace()
-    %s/\s\+$//e
+  if &ft =~ 'markdown'
+    return
+  endif
+  %s/\s\+$//e
 endfunction
 nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
 autocmd FileWritePre    * :call TrimWhiteSpace()
