@@ -314,3 +314,6 @@ augroup reload_vimrc " {
   autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " } "} "
 
+" C++ autocomplete via OmniCppComplete
+command CppCtagsBuildDB execute "!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ."
+set nocp
