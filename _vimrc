@@ -50,6 +50,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'oplatek/Conque-Shell'
 Plugin 'rizzatti/dash.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 "Plugin 'Townk/vim-autoclose'     	" interferes with YouCompleteMe
 Plugin 'raimondi/delimitmate'		" replacement for Townk/vim-autoclose
 Plugin 'airblade/vim-gitgutter'

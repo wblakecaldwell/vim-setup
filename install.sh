@@ -145,7 +145,6 @@ fi
 
 echo
 
-
 # ------------------------------------------
 # Vundle
 (
@@ -180,7 +179,7 @@ fi
 
 # ------------------------------------------
 # OmniCppComplete
-if [ ! -f '~/.vim/downloads/omnicppcomplete-0.41' ]; then
+if [ ! -d '~/.vim/downloads/omnicppcomplete-0.41' ]; then
   echo 'installing OmniCppComplete'
   mkdir -p ~/.vim/downloads
   mkdir -p ~/.vim/after
@@ -197,4 +196,5 @@ fi
 echo
 echo "done!"
 echo
+
 
