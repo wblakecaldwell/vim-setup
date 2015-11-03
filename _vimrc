@@ -324,6 +324,9 @@ autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
 " end Removes trailing spaces
 
+" Makefiles have tabs
+autocmd FileType make setlocal noexpandtab
+
 " reload when we save ~/.vimrc
 augroup reload_vimrc " {
   autocmd!
