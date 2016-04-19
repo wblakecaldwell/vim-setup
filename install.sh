@@ -193,6 +193,11 @@ if [ ! -d '~/.vim/downloads/omnicppcomplete-0.41' ]; then
   cp -pa $BASEDIR/doc/* ~/.vim/doc/
 fi
 
+# ------------------------------------------
+# Compile YouCompleteMe
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer
+
 echo
 echo "done!"
 echo
