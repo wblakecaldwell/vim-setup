@@ -31,7 +31,7 @@ More details found here: https://github.com/Valloric/YouCompleteMe/wiki/Building
 # Build Go from source
 
     cd ~
-    wget https://storage.googleapis.com/golang/go1.4.2.src.tar.gz
+    wget https://storage.googleapis.com/golang/go1.5.3.src.tar.gz
     tar zxvf go1.4.2.src.tar.gz
     cd go/src
     ./all.bash
