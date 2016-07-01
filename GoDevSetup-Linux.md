@@ -66,7 +66,7 @@ Either log out, then back in, or:
 
     mkdir -p ~/development && cd ~/development \
         && git clone https://github.com/wblakecaldwell/vim-setup.git \
-        && cd ~/development/vim-setup && ./install.sh -f \
+        && cd ~/development/vim-setup && ./install.sh -f
 
 
 # YouCompleteMe Plugin Setup
