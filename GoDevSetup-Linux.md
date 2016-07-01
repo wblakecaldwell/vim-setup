@@ -24,8 +24,8 @@ More details found here: https://github.com/Valloric/YouCompleteMe/wiki/Building
               --enable-perlinterp \
               --enable-luainterp \
               --enable-gui=gtk2 --enable-cscope --prefix=/usr \
-        && make VIMRUNTIMEDIR=/usr/share/vim/vim74
-    sudo make install
+        && make VIMRUNTIMEDIR=/usr/share/vim/vim74 \
+        && sudo make install
 
 
 # Build Go from source
