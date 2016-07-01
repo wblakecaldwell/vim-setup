@@ -13,28 +13,28 @@ These are the steps I use to set up a Linux system as a Go development environme
 
 More details found here: https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
 
-    mkdir -p ~/development && cd ~/development
-    git clone https://github.com/vim/vim.git
-    cd ~/development/vim
-    ./configure --with-features=huge \
+    mkdir -p ~/development && cd ~/development \
+        && git clone https://github.com/vim/vim.git \
+        && cd ~/development/vim \
+        && ./configure --with-features=huge \
               --enable-multibyte \
               --enable-rubyinterp \
               --enable-pythoninterp \
               --with-python-config-dir=/usr/lib/python2.7/config \
               --enable-perlinterp \
               --enable-luainterp \
-              --enable-gui=gtk2 --enable-cscope --prefix=/usr
-    make VIMRUNTIMEDIR=/usr/share/vim/vim74
+              --enable-gui=gtk2 --enable-cscope --prefix=/usr \
+        && make VIMRUNTIMEDIR=/usr/share/vim/vim74
     sudo make install
 
 
 # Build Go from source
 
-    cd ~
-    wget https://storage.googleapis.com/golang/go1.5.3.src.tar.gz
-    tar zxvf go1.4.2.src.tar.gz
-    cd go/src
-    ./all.bash
+    cd ~ \
+        && wget https://storage.googleapis.com/golang/go1.5.3.src.tar.gz \
+        && tar zxvf go1.4.2.src.tar.gz \
+        && cd go/src \
+        && ./all.bash
 
 
 # Add the following to the bottom of ~/.profile
@@ -58,13 +58,13 @@ Either log out, then back in, or:
 
 # My vim setup
 
-    mkdir -p ~/development && cd ~/development
-    git clone https://github.com/wblakecaldwell/vim-setup.git
-    cd ~/development/vim-setup && ./install.sh -f
+    mkdir -p ~/development && cd ~/development \
+        && git clone https://github.com/wblakecaldwell/vim-setup.git \
+        && cd ~/development/vim-setup && ./install.sh -f \
 
 
 # YouCompleteMe Plugin Setup
 
-    cd ~/.vim/bundle/YouCompleteMe
-    ./install.sh --clang-completer --gocode-completer
+    cd ~/.vim/bundle/YouCompleteMe \
+        && ./install.sh --clang-completer --gocode-completer
 
