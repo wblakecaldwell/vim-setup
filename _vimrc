@@ -10,7 +10,7 @@ set encoding=utf-8
 
 
 "set clipboard=unnamed
-
+set backspace=indent,eol,start
 set ts=2
 set sw=2
 set expandtab
@@ -294,7 +294,7 @@ nmap <silent> <F3> <Plug>DashSearch
 
 " golint https://github.com/golang/lint
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
-autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+autocmd BufWritePost,FileWritePost *.go execute 'GoLint' | cwindow
 
 " AutoFormat on write
 noremap <F3> :Autoformat<CR><CR>
