@@ -25,6 +25,15 @@ More details found here: https://github.com/Valloric/YouCompleteMe/wiki/Building
               --enable-luainterp \
               --enable-gui=gtk2 --enable-cscope --prefix=/usr \
         && make VIMRUNTIMEDIR=/usr/share/vim/vim74 \
+        && sudo make install \
+    
+# Install ctags
+
+    cd ~/development \
+        && wget http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz \
+        && cd ~/development/ctags-5.8 \
+        && ./configure \
+        && make \
         && sudo make install
 
 
