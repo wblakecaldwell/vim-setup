@@ -25,7 +25,7 @@ More details found here: https://github.com/Valloric/YouCompleteMe/wiki/Building
               --enable-luainterp \
               --enable-gui=gtk2 --enable-cscope --prefix=/usr \
         && make VIMRUNTIMEDIR=/usr/share/vim/vim74 \
-        && sudo make install \
+        && sudo make install
     
 # Install ctags
 
