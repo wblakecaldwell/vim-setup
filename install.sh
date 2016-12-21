@@ -194,10 +194,26 @@ if [ ! -d '~/.vim/downloads/omnicppcomplete-0.41' ]; then
 fi
 
 # ------------------------------------------
-# Compile YouCompleteMe
-cd ~/.vim/bundle/YouCompleteMe
-./install.py --clang-completer
-
+# neocomplete
+cd ~/development \
+  && git clone git@github.com:Shougo/neocomplete.vim.git \
+  && cd neocomplete.vim \
+  && rm -rf ~/.vim/plugin/neocomplete* \
+  && rm -rf ~/.vim/autoload/neocomplete \
+  && rm -rf ~/.vim/autoload/neocomplete.vim \
+  && rm -rf ~/.vim/autoload/unite \
+  && rm -rf ~/.vim/autoload/vital \
+  && rm -rf ~/.vim/autoload/vital.vim \
+  && rm -rf ~/.vim/doc/neocomplete* \
+  && rm -rf ~/.vim/test/neocomplete* \
+  && cp -pa plugin/neocomplete ~/.vim/plugin \
+  && cp -pa plugin/neocomplete.vim ~/.vim/plugin \
+  && cp -pa autoload/neocomplete* ~/.vim/autoload \
+  && cp -pa autoload/unite ~/.vim/autoload \
+  && cp -pa autoload/vital* ~/.vim/autoload \
+  && cp -pa doc/neocomplete.txt ~/.vim/doc \
+  && cp -pa test/neocomplete.vim ~/.vim/test
+  
 echo
 echo "done!"
 echo
