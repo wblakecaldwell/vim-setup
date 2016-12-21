@@ -86,9 +86,3 @@ Either log out, then back in, or:
         && git clone https://github.com/wblakecaldwell/vim-setup.git \
         && cd ~/development/vim-setup && ./install.sh -f
 
-
-# YouCompleteMe Plugin Setup
-
-    cd ~/.vim/bundle/YouCompleteMe \
-        && ./install.sh --clang-completer --gocode-completer
-
