@@ -30,7 +30,7 @@ More details found here: https://github.com/Valloric/YouCompleteMe/wiki/Building
             --enable-multibyte \
             --enable-rubyinterp \
             --enable-pythoninterp \
-            --with-python-config-dir=/usr/lib/python2.7/config \
+            --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
             --enable-perlinterp \
             --enable-gui=no \
             --enable-cscope \
