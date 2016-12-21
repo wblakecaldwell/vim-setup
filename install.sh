@@ -198,6 +198,10 @@ fi
 cd ~/development \
   && git clone git@github.com:Shougo/neocomplete.vim.git \
   && cd neocomplete.vim \
+  && mkdir -p ~/.vim/plugin \
+  && mkdir -p ~/.vim/autoload \
+  && mkdir -p ~/.vim/doc \
+  && mkdir -p ~/.vim/test \
   && rm -rf ~/.vim/plugin/neocomplete* \
   && rm -rf ~/.vim/autoload/neocomplete \
   && rm -rf ~/.vim/autoload/neocomplete.vim \
