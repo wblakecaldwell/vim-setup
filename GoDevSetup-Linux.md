@@ -5,7 +5,7 @@ These are the steps I use to set up a Linux system as a Go development environme
 
 # Packages
 
-    sudo apt-get install python-dev cmake ncurses-dev git g++
+    sudo apt-get install python-dev cmake ncurses-dev git g++ libreadline-dev
 
 # Compile & Install lua
 
