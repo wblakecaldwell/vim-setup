@@ -346,6 +346,9 @@ augroup reload_vimrc " {
   autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " } "} "
 
+" JSON formatting
+com! FormatJSON %!python -m json.tool
+
 " C++ autocomplete via OmniCppComplete
 command CppCtagsBuildDB execute "!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ."
 set nocp
