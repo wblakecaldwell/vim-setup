@@ -39,7 +39,7 @@ More details found here: https://github.com/Valloric/YouCompleteMe/wiki/Building
             --enable-luainterp \
             --with-features=huge \
             --prefix=/usr \
-        && make VIMRUNTIMEDIR=/usr/share/vim/vim80 \
+        && make VIMRUNTIMEDIR=/usr/share/vim/vim81 \
         && sudo make install
     
 # Install ctags
