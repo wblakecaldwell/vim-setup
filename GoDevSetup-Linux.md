@@ -44,16 +44,26 @@ More details found here: https://github.com/Valloric/YouCompleteMe/wiki/Building
     
 # Install ctags
 
+    sudo apt-get update \
+      && apt-get install \
+        gcc make \
+        pkg-config autoconf automake \
+        python3-docutils \
+        libseccomp-dev \
+        libjansson-dev \
+        libyaml-dev \
+        libxml2-dev
+
     cd ~/development \
-        && wget http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz \
-        && tar zxvf ctags-5.8.tar.gz \
-        && cd ~/development/ctags-5.8 \
+        && git clone https://github.com/universal-ctags/ctags.git \
+        && cd ~/development/ctags \
+        && ./autogen.sh \
         && ./configure \
         && make \
         && sudo make install
 
 
-# Install Go 1.7
+# Install Go (TODO: look up how to install the current version)
 
     cd ~ \
         && rm -rf ~/go \
