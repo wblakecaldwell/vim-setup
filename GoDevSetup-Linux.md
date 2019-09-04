@@ -45,7 +45,7 @@ More details found here: https://github.com/Valloric/YouCompleteMe/wiki/Building
 # Install ctags
 
     sudo apt-get update \
-      && apt-get install \
+      && sudo apt-get install \
         gcc make \
         pkg-config autoconf automake \
         python3-docutils \
