@@ -252,6 +252,7 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_bin_path = expand("~/go/bin")
+let g:go_jump_to_error = 0
 
 " run :GoBuild or :GoTestCompile based on the go file
 function! s:build_go_files()
@@ -307,7 +308,7 @@ nmap <silent> <F3> <Plug>DashSearch
 
 " golint https://github.com/golang/lint
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
-autocmd BufWritePost,FileWritePost *.go execute 'GoLint' | cwindow
+autocmd BufWritePost,FileWritePost *.go execute 'GoLint!' | cwindow
 
 " AutoFormat on write
 noremap <F3> :Autoformat<CR><CR>
